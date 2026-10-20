@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs"
 
 export default function Page() {
   return (
@@ -10,6 +11,15 @@ export default function Page() {
           <p>We&apos;ve already added the button component for you.</p>
           <Button className="mt-2">Button</Button>
         </div>
+        <Show when="signed-out">
+          <div className="flex gap-2">
+            <SignInButton className="mt-2" />
+            <SignUpButton className="mt-2" />
+          </div>
+        </Show>
+        <Show when="signed-in">
+          <UserButton className="mt-2" />
+        </Show>
         <div className="font-mono text-xs text-muted-foreground">
           (Press <kbd>d</kbd> to toggle dark mode)
         </div>
