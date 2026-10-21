@@ -13,12 +13,16 @@ export default function Page() {
         </div>
         <Show when="signed-out">
           <div className="flex gap-2">
-            <SignInButton className="mt-2" />
-            <SignUpButton className="mt-2" />
+            <SignInButton mode="modal">
+              <Button>Sign in</Button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <Button variant="outline">Sign up</Button>
+            </SignUpButton>
           </div>
         </Show>
         <Show when="signed-in">
-          <UserButton className="mt-2" />
+          <UserButton />
         </Show>
         <div className="font-mono text-xs text-muted-foreground">
           (Press <kbd>d</kbd> to toggle dark mode)
