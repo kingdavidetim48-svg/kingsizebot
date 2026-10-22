@@ -40,3 +40,6 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local test session (never commit)
+.clerk-test-session
